@@ -1,5 +1,5 @@
 
-const host = "https://ecommercida-d5b8obapn-phuonghoangg.vercel.app";
+const host = "ecommercida-o4pos2vx5-phuonghoangg.vercel.app";
 
 export const registerNewUser = async (formData) => {
     try {

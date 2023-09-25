@@ -1,8 +1,9 @@
 
+const host = "https://ecommercida-d5b8obapn-phuonghoangg.vercel.app";
 
 export const registerNewUser = async (formData) => {
     try {
-      const response = await fetch("/api/register", {
+      const response = await fetch(`${host}/api/register`, {
         method: "POST",
         headers: {
           "content-type": "application/json",

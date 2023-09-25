@@ -1,8 +1,9 @@
 import Cookies from "js-cookie";
+const host = "https://ecommercida-d5b8obapn-phuonghoangg.vercel.app";
 
 export const callStripeSession = async (formData) => {
   try {
-    const res = await fetch("/api/stripe", {
+    const res = await fetch(`${host}/api/stripe`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

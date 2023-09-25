@@ -1,8 +1,9 @@
 import Cookies from "js-cookie";
+const host = "https://ecommercida-d5b8obapn-phuonghoangg.vercel.app";
 
 export const addToCart = async (formData) => {
   try {
-    const res = await fetch("/api/cart/add-to-cart", {
+    const res = await fetch(`${host}/api/cart/add-to-cart`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -20,7 +21,7 @@ export const addToCart = async (formData) => {
 
 export const getAllCartItem = async (id) => {
   try {
-    const res = await fetch(`/api/cart/all-cart-items?id=${id}`, {
+    const res = await fetch(`${host}/api/cart/all-cart-items?id=${id}`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${Cookies.get("token")}`,
@@ -36,7 +37,7 @@ export const getAllCartItem = async (id) => {
 
 export const deleteFromCart = async (id) => {
   try {
-    const res = await fetch(`/api/cart/delete-from-cart?id=${id}`, {
+    const res = await fetch(`${host}/api/cart/delete-from-cart?id=${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${Cookies.get("token")}`,

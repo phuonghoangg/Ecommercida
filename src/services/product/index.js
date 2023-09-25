@@ -1,10 +1,11 @@
 //add product
+const host = "https://ecommercida-d5b8obapn-phuonghoangg.vercel.app";
 
 import Cookies from "js-cookie";
 
 export const addNewProduct = async (formData) => {
   try {
-    const res = await fetch("/api/admin/add-product", {
+    const res = await fetch(`${host}/api/admin/add-product`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -22,7 +23,7 @@ export const addNewProduct = async (formData) => {
 
 export const getAllAdminProduct = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/admin/all-products", {
+    const res = await fetch(`${host}/api/admin/all-products`, {
       method: "GET",
       cache: "no-store",
     });
@@ -35,7 +36,7 @@ export const getAllAdminProduct = async () => {
 
 export const updateProduct = async (formData) => {
   try {
-    const res = await fetch("/api/admin/update-product", {
+    const res = await fetch(`${host}/api/admin/update-product`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -53,7 +54,7 @@ export const updateProduct = async (formData) => {
 
 export const deleteProduct = async (formData) => {
   try {
-    const res = await fetch(`/api/admin/delete-product`, {
+    const res = await fetch(`${host}/api/admin/delete-product`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -71,34 +72,26 @@ export const deleteProduct = async (formData) => {
 
 export const productByCategory = async (id) => {
   try {
-    const res = await fetch(
-      `http://localhost:3000/api/admin/product-by-category?id=${id}`,
-      {
-        method: "GET",
-        cache: "no-store",
-      }
-    );
+    const res = await fetch(`${host}/api/admin/product-by-category?id=${id}`, {
+      method: "GET",
+      cache: "no-store",
+    });
     const data = await res.json();
     return data;
   } catch (error) {
     console.log(error);
   }
 };
-
 
 export const productById = async (id) => {
   try {
-    const res = await fetch(
-      `http://localhost:3000/api/admin/product-by-id?id=${id}`,
-      {
-        method: "GET",
-        cache: "no-store",
-      }
-    );
+    const res = await fetch(`${host}/api/admin/product-by-id?id=${id}`, {
+      method: "GET",
+      cache: "no-store",
+    });
     const data = await res.json();
     return data;
   } catch (error) {
     console.log(error);
   }
 };
-
